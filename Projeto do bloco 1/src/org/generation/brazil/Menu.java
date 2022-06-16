@@ -4,8 +4,9 @@ import java.util.Scanner;
 
 public class Menu {
 	
-	public int totalPizza;
-	private Scanner sc;
+	private static int totalPizza;
+	private static double valorPizza;
+	private static Scanner sc;
 	
 	public void Cardapio() throws InterruptedException {
 		
@@ -89,17 +90,21 @@ public class Menu {
 		System.out.println("Você está pedindo " + totalPizza + " pizzas");
 		Thread.sleep(1500);
 		
-		totalPizza = (totalPizza * 36);
+		
 		
 		opcionais.EscolherOpcoes();
 	}
+	
+		public static double getValorPizza() {
+			return Menu.totalPizza * 36;
+		}
+	
+		public void setValorPizza(double valorPizza) {
+			this.valorPizza = totalPizza;
+			System.out.println(valorPizza);
+		}
+		
+		
+}
 
-	
-	
-
-	
-	
-	
-	
-	}
 

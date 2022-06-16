@@ -4,22 +4,22 @@ import java.util.Scanner;
 
 public class Pagamentos {
 
-	private EntregarRetirar finalizarPedido = new EntregarRetirar();
+	private static EntregarRetirar finalizarPedido = new EntregarRetirar();
 	
-	public Scanner entrada = new Scanner(System.in);
+	public static Scanner entrada = new Scanner(System.in);
 	
-	private double valorPizzas = 144;
 
 	@SuppressWarnings("unused")
-	private double valorPago;
+	private static double valorPago;
 
-	public void telaInicialPagamentos() throws InterruptedException {
-		System.out.println("O valor total foi de R$" + valorPizzas);
+	public static void telaInicialPagamentos() throws InterruptedException {
+		
+		System.out.println("O valor total foi de R$" + Menu.getValorPizza());
 		Thread.sleep(1000);
 		escolhaDoPagamento();
 	}
 
-	public void escolhaDoPagamento() throws InterruptedException {
+	public static void escolhaDoPagamento() throws InterruptedException {
 		System.out.println("\nEscolha o meio de pagamento:\n\n1. Cartão de Crédito/Débito/VR."
 				+ "\n2. Dinheiro.\n3. Pix.");
 		Thread.sleep(1000);
@@ -48,7 +48,7 @@ public class Pagamentos {
 
 	}
 
-	public void pagamentoDinheiro() throws InterruptedException {
+	public static void pagamentoDinheiro() throws InterruptedException {
 		System.out.println("Pagamento em Dinheiro selecionado.\nPrecisa de troco?\n1. Sim.\n2. Não.");
 		Thread.sleep(1500);
 		byte troco = entrada.nextByte();
@@ -70,16 +70,16 @@ public class Pagamentos {
 		finalizarPedido.Finalizar();
 	}
 
-	public void sistemaDeTroco() throws InterruptedException {
+	public static void sistemaDeTroco() throws InterruptedException {
 		System.out.println("Para quanto?");
 		valorPago = entrada.nextDouble();
 		Thread.sleep(500);
 
-		double troco = valorPago - valorPizzas;
+		double troco = valorPago - Menu.getValorPizza();
 		System.out.printf("Levaremos seu troco de R$" + troco);
 	}
 
-	public void pagamentoEmPix() throws InterruptedException {
+	public static void pagamentoEmPix() throws InterruptedException {
 		System.out.println(
 				"Pagamento por PIX selecionando.\nPara efetuar o pagamento copie e cole o código abaixo na aba PIX do aplicativo do seu banco.");
 		Thread.sleep(1500);
@@ -91,7 +91,7 @@ public class Pagamentos {
 		finalizarPedido.Finalizar();
 	}
 
-	public void pagamentoPorCartao() throws InterruptedException {
+	public static void pagamentoPorCartao() throws InterruptedException {
 		System.out.println("Pagamento por cartão selecionado.\nSelecione a opção: ");
 		Thread.sleep(500);
 		
@@ -205,7 +205,7 @@ public class Pagamentos {
 		
 	}
 
-	public void mudarPagamento() throws InterruptedException {
+	public static void mudarPagamento() throws InterruptedException {
 		escolhaDoPagamento();
 	}
 

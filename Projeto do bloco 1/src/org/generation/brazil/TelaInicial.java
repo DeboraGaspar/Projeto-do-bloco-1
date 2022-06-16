@@ -4,17 +4,17 @@ import java.util.Scanner;
 
 public class TelaInicial {
 
-	private Cadastro cadastro = new Cadastro();
+	private static Cadastro cadastro = new Cadastro();
 	
 	private Menu menu = new Menu();
 	
-	public Scanner entrada = new Scanner(System.in);
+	public static Scanner entrada = new Scanner(System.in);
 
 	public void SaudarUsuario() throws InterruptedException {
 		
-		System.out.println("OlÃ¡! Seja bem-vinde Ã  Java's Pizzaria!");
+		System.out.println("Olá! Seja bem-vinde a  Java's Pizzaria!");
 		Thread.sleep(2000);
-		System.out.println("Nesse aplicativo, vocÃª seleciona as opÃ§Ãµes selecionando os nÃºmeros"
+		System.out.println("Nesse aplicativo, você seleciona as opções selecionando os números"
 				+ " correspondentes a ela");
 		Thread.sleep(2500);
 		
@@ -24,9 +24,9 @@ public class TelaInicial {
 	
 	public void EscolherOpcoesMenu() throws InterruptedException {
 		
-		System.out.println("Para iniciar, fale para nÃ³s: ");
+		System.out.println("Para iniciar, fale para nós: ");
 		Thread.sleep(1000);
-		System.out.println("1. JÃ¡ sou cliente");
+		System.out.println("1. Já sou cliente");
 		System.out.println("2. Quero me cadastrar");
 		System.out.println("3. Sair");
 		Thread.sleep(1000);
@@ -46,7 +46,7 @@ public class TelaInicial {
 			System.out.println("VocÃª saiu do programa");
 			
 		} else {
-			System.out.println("OpÃ§Ã£o invÃ¡lida!");
+			System.out.println("Opção inválida!");
 		}
 
 	}
@@ -56,16 +56,16 @@ public class TelaInicial {
 		String nomeDigitado;
 		
 		do {
-			System.out.println("FaÃ§a seu login");
+			System.out.println("Faça seu login");
 			Thread.sleep(1300);
-			System.out.print("Digite seu nome de usuÃ¡rio: ");	
+			System.out.print("Digite seu nome de usuário: ");	
 			
 		if(cadastro.getUsuario().equals(nomeDigitado = entrada.next())) {
 	
 			colocarSenha();
 
 		}else {
-			System.out.println("Login nÃ£o encontrado!");
+			System.out.println("Login não encontrado!");
 			Thread.sleep(1500);
 		}
 		

@@ -6,11 +6,11 @@ public class Cadastro {
 		
 		public Scanner leitor = new Scanner(System.in);
 		
-		private String nome = "Felipe";
-		private String telefone = "123456789";
-		private String endereco = "Rua Generation, 54";
-		private String usuario = "felipe";
-		private String senha = "senha";	
+		private static String nome = "Felipe";
+		private static String telefone = "123456789";
+		private static String endereco = "Rua Generation, 54";
+		private static String usuario = "felipe";
+		private static String senha = "senha";	
 		
 		public void cadastreUsuario() throws InterruptedException {
 			
